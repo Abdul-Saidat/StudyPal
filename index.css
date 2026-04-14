@@ -301,6 +301,17 @@ div.premium {
   list-style: square outside none;
 }
 
+.free ul li::before, .standard ul li::before, .premium ul li::before {
+  content: "✓";
+  color: darkviolet;
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.standard ul li::before {
+  color: white;
+}
+
 .free button:hover,
 .premium button:hover {
   background: darkviolet;
