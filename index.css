@@ -28,11 +28,21 @@ button {
   padding: 15px 10px;
 }
 
+.navbar span {
+  font-weight: 600;
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+}
+
+.dropdown {
+  font-size: 24px;
+  /* padding: 8px; */
+  cursor: pointer;
 }
 
 .menu-toggle {
@@ -43,11 +53,11 @@ button {
   position: fixed;
   top: 0;
   right: 0;
-  height: 50%;
+  height: 100vh;
   width: 100%;
   display: none;
   color: white;
-  background: rgb(221, 178, 240);
+  background: rgba(90, 0, 180, 0.97);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -55,11 +65,42 @@ button {
 }
 
 .overlay-menu ul {
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .overlay-menu ul li {
+  text-align: center;
   margin: 20px 0;
+  width: 100%;
+}
+
+.overlay-menu .auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 80%;
+  margin-top: 32px;
+}
+
+.overlay-menu .auth-buttons button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.overlay-menu .auth-buttons .btn-login {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.overlay-menu .auth-buttons .btn-signup {
+  background: white;
+  color: darkviolet;
+  font-weight: 600;
+  border: 2px;
 }
 
 .menu-toggle:checked ~ .overlay-menu {
@@ -71,7 +112,8 @@ button {
 .close-btn {
   position: absolute;
   top: 0px;
-  right: 70px;
+  right: 25px;
+  /* right: 70px; */
   font-size: 36px;
   color: white;
   cursor: pointer;
@@ -165,6 +207,7 @@ a {
 
 .studypal-features h1 {
   text-align: center;
+  font-size: 26px;
 }
 
 .features {
@@ -195,6 +238,11 @@ a {
   padding-inline: 30px;
 }
 
+.price h1 {
+  margin: 0;
+  text-align: center;
+}
+
 .pricing {
   display: flex;
   flex-direction: column;
@@ -204,6 +252,23 @@ a {
   margin-top: 20px;
 }
 
+.pricing p {
+  margin: 0;
+}
+
+.pricing .payment {
+  font-size: 30px;
+  font-weight: 700;
+  margin-block: 0;
+  margin-top: 10px;
+  /* margin-block: 0px; */
+}
+
+.pricing .payment span {
+  font-size: 13px;
+  font-weight: 100;
+}
+
 .pricing div.free,
 div.standard,
 div.premium {
@@ -211,6 +276,8 @@ div.premium {
   border-radius: 10px;
   width: 250px;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .free button,
@@ -220,7 +287,8 @@ div.premium {
   padding: 10px 60px;
   border: none;
   border-radius: 8px;
-  margin-top: auto;
+  margin-top: 10px;
+  /* margin-top: auto; */
 }
 
 .free ul,
@@ -289,6 +357,11 @@ div.premium {
   padding: 13px 5px;
 }
 
+.email input:focus {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+  outline: #555;
+}
+
 .email button {
   width: 100%;
   background: white;
@@ -303,31 +376,54 @@ div.premium {
   width: 100%;
   background-color: #1a0030;
   padding: 40px 0px;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
+  /* padding-inline: 20px; */
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-inline: 24px;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  /* padding-inline: 15px; */
+  /* gap: 30px */
+  /* row-gap: 6px; */
+  /* column-gap: 8px; */
+  /* gap: 2rem 1rem; */
 }
 
-.footer div {
+.footer > div {
+  width: 50%;
+  /* flex: 0 0 50%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  /* gap: 10px; */
+  /* color: white; */
+}
+
+.footer > div {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
+}
+
+.footer div h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
   color: white;
 }
 
-.footer div span {
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .footer a {
+  display: block;
   text-decoration: none;
-  color: gray;
+  color: white;
+  line-height: 1.8;
 }
 
 .footer a:hover {
@@ -336,32 +432,25 @@ div.premium {
 }
 
 .footer-container p {
-  color: white;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: 0;
-  padding-top: 50px;
-}
-
-.footer div a {
-  text-decoration: none;
-  color: white;
+  padding: 24px 0 16px 0;
+  margin-top: 32px;
+  /* padding: 16px 0; */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
   .navbar {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    background-color: darkviolet;
     padding-block: 20px;
   }
 
   .nav-container {
     display: flex;
     gap: 25px;
-    /* justify-content: center; */
-    /* align-items: center; */
   }
 
   .nav-links {
@@ -412,21 +501,12 @@ div.premium {
   }
 
   .hero-section p {
-    color: #555;
     margin-top: 15px 0;
-  }
-
-  .hero-section button {
-    padding: 10px 20px;
-    background: darkviolet;
-    color: white;
-    border: none;
-    border-radius: 5px;
   }
 
   .hero-section img {
     width: 400px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
   }
 
   .studypal-features {
@@ -434,146 +514,67 @@ div.premium {
   }
 
   .studypal-features h1 {
-    text-align: center;
+    font-size: 32px;
   }
 
   .features {
-    display: flex;
     flex-direction: row;
-    gap: 30px;
   }
 
   .feature {
-    flex: 1;
-    background-color: #f5f5f5;
     padding: 20px;
     border-radius: 10px;
   }
 
   .pricing {
-    display: flex;
     flex-direction: row;
     gap: 15px;
-    justify-content: center;
+    align-items: stretch;
   }
 
-  .pricing div.free,
-  div.standard,
-  div.premium {
-    border: 1px solid #555;
-    border-radius: 10px;
-    width: 250px;
-    padding: 0 15px;
-  }
-
-  .free button,
-  .standard button,
-  .premium button {
-    background: rgb(161, 15, 223);
-    padding: 10px 60px;
-    border: none;
-    border-radius: 8px;
-  }
-
-  .free ul,
-  .standard ul,
-  .premium ul {
-    padding: 5px 0;
+  /* .free {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    list-style: square outside none;
-  }
-
-  .free button:hover,
-  .premium button:hover {
-    background: darkviolet;
-  }
-
-  .standard {
-    background-color: rgb(164, 6, 231);
-    background-color: darkviolet;
-    color: white;
-  }
-
-  .standard button {
-    background: white;
-    color: darkviolet;
-  }
-
-  .standard button:hover {
-    background: whitesmoke;
-  }
-
-  .pricing div:hover {
-    box-shadow: 50px;
-    z-index: 50;
-    transition: ease-in;
-    transform: translateY();
-  }
-
-  .email {
-    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    gap: 0;
+  } */
+
+  .email {
     padding-block: 50px;
   }
 
   .email div {
-    border: 2px solid white;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
     max-width: 400px;
-    text-align: center;
     padding: 60px;
     color: white;
   }
 
   .email input {
-    display: block;
-    width: 100%;
-    border: 1px solid #2d0057;
-    border-radius: 5px;
     padding: 10px 5px;
   }
 
-  .email input:focus {
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
-    outline: #555;
-  }
-
   .email button {
-    background: white;
-    color: darkviolet;
     padding: 10px 60px;
-    border: none;
-    border-radius: 8px;
   }
 
   .footer-container {
-    width: 100%;
-    background-color: #1a0030;
     padding-block: 30px;
   }
 
   .footer {
-    display: flex;
-    align-items: flex-start;
-    color: white;
+    grid-template-columns: repeat(4, 1fr);
+    padding-inline: 30px;
+    /* align-items: flex-start; */
+    /* color: white; */
   }
 
-  .footer div {
+  /* .footer div {
     display: flex;
     justify-content: center;
-  }
+  } */
 
-  .footer div span {
+  .footer div h4 {
     font-size: 22px;
-    font-weight: 600;
-  }
-
-  .footer div a {
-    text-decoration: none;
-    color: white;
   }
 }
