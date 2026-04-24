@@ -60,11 +60,11 @@
           id="menu-toggle"
           class="menu-toggle"
         />
-        <label for="menu-toggle" class="dropdown">&#9776;</label>
+        <label for="menu-toggle" id="menuBtn" class="dropdown">&#9776;</label>
         <div class="overlay-menu">
           <nav class="nav-links">
             <label for="menu-toggle" class="close-btn">&times;</label>
-            <ul>
+            <ul id="menu">
               <li><a href="#home">Home</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href="#pricing">Pricing</a></li>
@@ -226,5 +226,15 @@
         <p>&copy;2026 StudyPal. All rights reserved.</p>
       </footer>
     </main>
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const links = document.querySelectorAll(".nav-links a");
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menuToggle.checked = false;
+    });
+  });
+ </script>
   </body>
 </html>
